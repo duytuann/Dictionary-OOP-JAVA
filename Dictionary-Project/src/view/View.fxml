@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerJavaFX">
+   <children>
+      <AnchorPane prefHeight="67.0" prefWidth="250.0" style="-fx-background-color: #053565;" />
+      <AnchorPane layoutX="250.0" prefHeight="67.0" prefWidth="525.0" style="-fx-background-color: #0a457f;">
+         <children>
+            <ImageView fx:id="More_btn" fitHeight="27.0" fitWidth="29.0" layoutX="410.0" layoutY="25.0" onMouseClicked="#setOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/Edit.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ScrollPane hbarPolicy="NEVER" layoutX="250.0" layoutY="66.0" prefHeight="553.0" prefWidth="525.0">
+        <content>
+          <AnchorPane prefWidth="526.0">
+               <children>
+                  <WebView fx:id="webView" layoutX="-1.0" prefHeight="552.0" prefWidth="526.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.9999755859374773" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <TabPane layoutX="-2.0" layoutY="66.0" prefHeight="554.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Anh - Việt">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="recommendWordsList_av" layoutY="69.0" onMouseClicked="#setOnMouseClicked_av" prefHeight="454.0" prefWidth="250.0" />
+                        <TextField fx:id="wordField_av" layoutX="15.0" layoutY="14.0" onKeyReleased="#setOnKeyReleased" prefHeight="46.0" prefWidth="220.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Anh - Anh">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="recommendWordsList_aa" onMouseClicked="#setOnMouseClicked_aa" prefHeight="274.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0" />
+                        <TextField fx:id="wordField_aa" layoutX="15.0" layoutY="8.0" onKeyReleased="#setOnKeyReleased" prefHeight="46.0" prefWidth="220.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane fx:id="More_pane" layoutX="250.0" layoutY="66.0" prefHeight="554.0" prefWidth="526.0" visible="false">
+         <children>
+            <Button fx:id="Edit_btn" layoutX="85.0" layoutY="489.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="26.0" prefWidth="98.0" text="Edit" />
+            <Button fx:id="Add_btn" layoutX="222.0" layoutY="489.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="26.0" prefWidth="98.0" text="Add" />
+            <Button fx:id="Delete_btn" layoutX="355.0" layoutY="489.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="26.0" prefWidth="98.0" text="Delete" />
+            <Label layoutX="134.0" layoutY="25.0" prefHeight="43.0" prefWidth="270.0" text="Dictionary Management">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Line endX="272.4000244140625" endY="-1.52587890625E-5" layoutX="183.0" layoutY="80.0" startX="-100.0" />
+            <Label layoutX="230.0" layoutY="93.0" prefHeight="26.0" prefWidth="66.0" text="Add/Edit">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Line endX="272.4000244140625" endY="-1.52587890625E-5" layoutX="185.0" layoutY="382.0" startX="-100.0" />
+            <Label layoutX="235.0" layoutY="389.0" prefHeight="27.0" prefWidth="55.0" text="Delete">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="137.0" prefHeight="18.0" prefWidth="70.0" text="Enter a word" />
+            <TextField fx:id="addField" layoutX="173.0" layoutY="134.0" prefHeight="26.0" prefWidth="283.0" />
+            <TextField fx:id="spellingField" layoutX="173.0" layoutY="181.0" prefHeight="26.0" prefWidth="282.0" />
+            <TextField fx:id="typeField" layoutX="173.0" layoutY="226.0" prefHeight="26.0" prefWidth="284.0" />
+            <TextArea fx:id="glossaryField" layoutX="172.0" layoutY="270.0" prefHeight="94.0" prefWidth="286.0" />
+            <Label layoutX="85.0" layoutY="230.0" prefHeight="18.0" prefWidth="70.0" text="Type" />
+            <Label layoutX="85.0" layoutY="185.0" prefHeight="18.0" prefWidth="70.0" text="Spelling" />
+            <Label layoutX="82.0" layoutY="276.0" prefHeight="18.0" prefWidth="70.0" text="Glossary" />
+            <Label layoutX="77.0" layoutY="429.0" prefHeight="18.0" prefWidth="70.0" text="Enter a word" />
+            <TextField fx:id="deleteField" layoutX="165.0" layoutY="426.0" prefHeight="26.0" prefWidth="283.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
